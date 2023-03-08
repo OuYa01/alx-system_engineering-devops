@@ -11,3 +11,5 @@ the script can Display the contents list of your current directory
 script that changes the working directory to the user’s home directory
 #3-listfiles
 script Display current directory contents in a long format
+#4-listmorefiles
+script Display current directory contents, including hidden files (starting with .) 
