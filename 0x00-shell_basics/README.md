@@ -1,15 +1,20 @@
 #Bash projects
-we write much cripts here
+*we write much cripts here*
 
-Here, you can find the names of all the files present in this folder and a brief description of each script in its corresponding file :
+*Here, you can find the names of all the files present in this folder and a brief description of each script in its corresponding file* :
 
 #0-current_working_directory
-the script i type can display where am i exactly
+- the script i type can display where am i exactly
 #1-listit
-the script can Display the contents list of your current directory
+- the script can Display the contents list of your current directory
 #2-bring_me_home
-script that changes the working directory to the user’s home directory
+- script that changes the working directory to the user’s home directory
 #3-listfiles
-script Display current directory contents in a long format
+- script Display current directory contents in a long format
 #4-listmorefiles
-script Display current directory contents, including hidden files (starting with .) 
+- script Display current directory contents, including hidden files (starting with .)
+#5-listfilesdigitonly
+- Display current directory contents.
+- Long format
+- with user and group IDs displayed numerically
+- And hidden files (starting with .) 
