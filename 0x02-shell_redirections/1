@@ -1,0 +1,2 @@
+#!/bin/bash
+lastl=$(tail -n 1 iacta) | echo "lastl" >> iacta
