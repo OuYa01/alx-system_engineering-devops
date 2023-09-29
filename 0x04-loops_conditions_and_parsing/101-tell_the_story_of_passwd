@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-
 # Read and process /etc/passwd using while loop and IFS
+
 while IFS=: read -r username password uid gid gecos home shell; do
     # Extract user ID information from gecos field
     user_info=$(echo "$gecos" | awk -F',' '{print $5}')
