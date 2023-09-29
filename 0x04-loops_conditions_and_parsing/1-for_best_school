@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# this bash script print "Best school 10 times"
 
 name='Best School'
 
