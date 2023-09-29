@@ -17,7 +17,7 @@ do
 		9)
 
 		echo "$i"
-		echo "bad luck drom Japan"
+		echo "bad luck from Japan"
 		;;
 		17)
 
