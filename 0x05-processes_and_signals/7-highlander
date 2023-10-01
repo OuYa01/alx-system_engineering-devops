@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# this bash script display To inf... with 2s slepp and display Iam invincible!!! if u ant to kill him
+
+ignore_sigterm()
+{
+	echo "I am invincible!!!"
+}
+
+trap ignore_sigterm SIGTERM
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
