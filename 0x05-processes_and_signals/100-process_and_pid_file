@@ -3,24 +3,26 @@
 
 My_pid=$$
 file="/var/run/myscript.pid"
-echo "$My_pid" > "$file"
+echo "$My_pid" >> "$file"
 
+# Deletes the file /var/run/myscript.pid and terminates itself when receiving a SIGQUIT
 cleanup()
 {
 	rm "$file"
 	exit
 }
 
-trap 'cleanup' SIGQUIT SIGTERM
+trap 'cleanup' SIGQUIT
 
+# Displays I hate the kill command when receiving a SIGTERM signal and rm file and exit
 ignore_sigterm()
 {
 	echo "I hate the kill command"
-	exit
 }
 
-trap 'ignore_sigterm' SIGTERM
+trap '{ ignore_sigterm; cleanup; }' SIGTERM
 
+# Displays Y U no love me?! when receiving a SIGINT signal
 ignore_sigint()
 {
 	echo "Y U no love me?!"
@@ -28,6 +30,7 @@ ignore_sigint()
 
 trap 'ignore_sigint' SIGINT
 
+# Displays To infinity and beyond indefinitely
 while true
 do
 	echo "To infinity and beyond"
