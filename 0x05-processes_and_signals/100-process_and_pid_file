@@ -16,6 +16,7 @@ trap 'cleanup' SIGQUIT SIGTERM
 ignore_sigterm()
 {
 	echo "I hate the kill command"
+	exit
 }
 
 trap 'ignore_sigterm' SIGTERM
