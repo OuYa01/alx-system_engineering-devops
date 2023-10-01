@@ -5,26 +5,27 @@ My_pid=$$
 file="/var/run/myscript.pid"
 echo "$My_pid" > "$file"
 
-exitu()
+exits()
 {
-	rm -f "$file"
+	rm "$file"
+	exit
 }
 
-trap exitu SIGTERM SIGQUIT
+trap 'exits' SIGQUIT SIGTERM
 
 ignore_sigterm()
 {
 	echo "I hate the kill command"
 }
 
-trap ignore_sigterm SIGTERM
+trap 'ignore_sigterm' SIGTERM
 
 ignore_sigint()
 {
 	echo "Y U no love me?!"
 }
 
-trap ignore_sigint SIGINT
+trap 'ignore_sigint' SIGINT
 
 while true
 do
