@@ -5,13 +5,13 @@ My_pid=$$
 file="/var/run/myscript.pid"
 echo "$My_pid" > "$file"
 
-exits()
+cleanup()
 {
 	rm "$file"
 	exit
 }
 
-trap 'exits' SIGQUIT SIGTERM
+trap 'cleanup' SIGQUIT SIGTERM
 
 ignore_sigterm()
 {
