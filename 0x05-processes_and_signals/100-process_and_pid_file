@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# this bash script creat a file "/var/run/myscript.pid containing its PID"
+
+My_pid=$$
+file="/var/run/myscript.pid"
+echo "$My_pid" > "$file"
+
+exitu()
+{
+	rm -f "$file"
+}
+
+trap exitu SIGTERM SIGQUIT
+
+ignore_sigterm()
+{
+	echo "I hate the kill command"
+}
+
+trap ignore_sigterm SIGTERM
+
+ignore_sigint()
+{
+	echo "Y U no love me?!"
+}
+
+trap ignore_sigint SIGINT
+
+while true
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
